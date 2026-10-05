@@ -1,5 +1,6 @@
 import React from 'react';
 import { Gift, Award, Compass, Sparkles, Check, Download } from 'lucide-react';
+import { bonusCollectionMockup } from '../assets/images';
 
 interface BonusSectionProps {
   onOpenCheckout: () => void;
@@ -58,9 +59,12 @@ export const BonusSection: React.FC<BonusSectionProps> = ({ onOpenCheckout }) =>
         {/* Bonus bundle visual illustration */}
         <div className="max-w-2xl mx-auto mb-10 bg-gradient-to-r from-amber-50 via-emerald-50 to-sky-50 rounded-2xl p-3 sm:p-4 border border-amber-200/80 shadow-md">
           <img
-            src="/src/assets/images/bonus_collection_mockup_1791209157374.jpg"
+            src={bonusCollectionMockup}
             alt="Coleção de Bônus: Pôster A4 de Dedilhado, Guia Som Limpo e Certificado Musical"
             className="w-full h-auto object-cover rounded-xl shadow-inner max-h-[340px]"
+            onError={(e) => {
+              e.currentTarget.src = '/images/bonus_collection_mockup.jpg';
+            }}
           />
           <div className="text-center mt-3 text-xs sm:text-sm font-bold text-slate-800">
             📦 Todos os 3 bônus são entregues em arquivos digitais PDF prontos para baixar e imprimir

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Eye, Type, Smile, CheckCircle, Sparkles, BookOpen } from 'lucide-react';
 import { InteractiveFlutePlayer } from './InteractiveFlutePlayer';
+import { bookletPagePreview } from '../assets/images';
 
 interface HowItWorksSectionProps {
   onOpenCheckout: () => void;
@@ -87,9 +88,12 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenChec
             <div className="lg:col-span-5 bg-slate-100 p-3 sm:p-4 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md">
               <div className="relative rounded-xl overflow-hidden shadow-inner">
                 <img
-                  src="/src/assets/images/booklet_page_preview_1791209128428.jpg"
+                  src={bookletPagePreview}
                   alt="Interior da apostila com notas facilitadas e dedilhado colorido"
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/booklet_page_preview.jpg';
+                  }}
                 />
                 <div className="absolute bottom-2 left-2 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded-lg">
                   Foto real do material impresso

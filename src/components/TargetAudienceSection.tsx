@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Sparkles, GraduationCap, CheckCircle } from 'lucide-react';
+import { happyChildFlute } from '../assets/images';
 
 export const TargetAudienceSection: React.FC = () => {
   return (
@@ -117,9 +118,12 @@ export const TargetAudienceSection: React.FC = () => {
         {/* Real photo showcase of child playing happily */}
         <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-md max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
           <img
-            src="/src/assets/images/happy_child_flute_1791209297042.jpg"
+            src={happyChildFlute}
             alt="Criança tocando flauta doce com alegria em casa"
             className="w-full md:w-1/2 h-56 sm:h-64 object-cover rounded-xl shadow-inner"
+            onError={(e) => {
+              e.currentTarget.src = '/images/happy_child_flute.jpg';
+            }}
           />
           <div className="md:w-1/2 space-y-3">
             <span className="text-xs uppercase tracking-wider font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">

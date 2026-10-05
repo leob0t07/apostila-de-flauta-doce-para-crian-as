@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, ShieldCheck, Star, Sparkles, CheckCircle2, Download, Printer } from 'lucide-react';
+import { heroFluteMockup } from '../assets/images';
 
 interface HeroSectionProps {
   onOpenCheckout: () => void;
@@ -32,10 +33,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenCheckout }) => {
         <div className="relative max-w-3xl mx-auto mb-8 sm:mb-10">
           <div className="relative rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-white shadow-2xl border border-slate-200/80 group">
             <img
-              src="/src/assets/images/hero_flute_mockup_1791209114970.jpg"
+              src={heroFluteMockup}
               alt="Apostila de Flauta Doce para Crianças em tablet, celular e folha impressa"
               className="w-full h-auto object-cover rounded-xl sm:rounded-2xl shadow-inner max-h-[480px]"
               loading="eager"
+              onError={(e) => {
+                e.currentTarget.src = '/images/hero_flute_mockup.jpg';
+              }}
             />
 
             {/* Quick floating benefit badges on image */}
