@@ -1,0 +1,6 @@
+{
+  "name": "Apostila de Flauta Doce para Crianças",
+  "description": "Método visual descomplicado para crianças aprenderem a tocar flauta doce em menos de 15 minutos com partituras ilustradas e furos desenhados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
